@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Create</title>
+
+    <!-- CSS -->
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+
+	<!-- Bootstrap 5 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">	
+
+  </head>
+
+  <body class="page">
+
+	<!-- global container  -->
+	<div class="container-fluid wrapper">
+
+		<!-- Header -->
+
+		<header class="header">
+			<form action="/search" method="GET" class="input-form row">
+            
+                <div class="home col-md-3">
+                    <a href="/" class="home-button">Home</a>
+                </div>
+
+                <div class="home col-md-3">
+                    <a href="/create" class="home-button">Create</a>
+                </div>
+
+                <div class="col-auto col-md-4">
+                    <input type="text" name="q" class="form-control search-control" id="inlineFormInput" placeholder="Search in the store">
+                </div>
+
+                <div class="col-submit col-md-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>      
+
+            </form>
+		</header>
+
+
+        <div class="new-item-created">
+            <span class="new-item">New item successfully created</span>
+		</div>
+
+        <div class="new-item-link col-md-4">
+            <a href="" type="button" class="btn btn-success">See item here</a>
+        </div>
+
+		<!-- Add new item -->
+
+        <div class="add-item">
+            <span class="new-phone">Add New Phone</span>
+		</div>
+
+        <form class="phone-form">
+            <div class="form-group">
+              <label for="formGroupExampleInput"></label>
+              <input type="text" class="model-input form-control" placeholder="Model">
+              <span class="error-detection"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="formGroupExampleInput"></label>
+              <input type="text" class="company-input form-control" placeholder="Company">
+              <span class="error-detection"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput"></label>
+                <input type="text" class="img-input form-control" placeholder="Image URL">
+                <span class="error-detection"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput"></label>
+                <input type="text" class="description-input form-control"  placeholder="Description">
+                <span class="error-detection"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput"></label>
+                <input type="text" class="price-input form-control" placeholder="Price">
+                <span class="error-detection"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput"></label>
+                <input type="text" class="year-input form-control" placeholder="Year">
+                <span class="error-detection"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput"></label>
+                <textarea rows="5" class="location-input form-control" placeholder="Store name - location"></textarea>
+                <span class="error-detection"></span>
+            </div>
+
+            <div class="form-group submit-btn">
+                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+            </div>
+          </form>
+
+
+	</div>
+
+
+
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- JavaScript -->
+        <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  </body>
+</html>

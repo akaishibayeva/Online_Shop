@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>View</title>
+
+    <!-- CSS -->
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+
+	<!-- Bootstrap 5 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">	
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+
+  </head>
+
+  <body class="page">
+
+	<!-- global container  -->
+	<div class="container-fluid wrapper">
+
+		<!-- Header -->
+
+		<header class="header">
+			<form action="/search" method="GET" class="input-form row">
+            
+                <div class="home col-md-3">
+                    <a href="/" class="home-button">Home</a>
+                </div>
+
+                <div class="home col-md-3">
+                    <a href="/create" class="home-button">Create</a>
+                </div>
+
+                <div class="col-auto col-md-4">
+                    <input type="text" name="q" class="form-control search-control" id="inlineFormInput" placeholder="Search in the store">
+                </div>
+
+                <div class="col-submit col-md-2">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>      
+
+            </form>
+		</header>
+
+        <!-- Content to view -->
+
+        <div class="card mb-6">
+
+            <div class="row g-0">
+              <div class="col-md-4">
+                <div class="phone-img-wrapper"> 
+                    <img src="{{ phone['picture'] }}" alt="{{ phone['model'] }}" class="card-img-top phone-img">
+                </div>
+              </div>
+              
+              <div class="col-md-8 right-card">
+                <div class="card-body">
+                  <h5 class="card-title-view">{{ phone['company'] }} - {{ phone['model'] }}</h5>
+
+                  <div class="price-edit">
+                      <span class="price">${{ phone['price'] }}</span>
+                      <input class="price-input form-control" value="{{ phone['price'] }}" type="text"><br>
+                      <span class="price-error"></span>
+                  </div>
+
+                  <div class="btn-group edit-wrapper" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-primary edit">Edit</button>
+                    <button type="button" class="btn btn-primary submit">Submit</button>
+                    <button type="button" class="btn btn-primary discard">Discard</button>
+                  </div>
+
+                  <p class="card-text-view-one">Year: {{ phone['year'] }}</p>
+                  <p class="card-text-view-two">
+                    {{ phone['description'] }}
+                 </p>
+                  
+                </div>
+              </div>
+            </div>
+
+        </div>
+
+        <!-- Additional data view -->
+
+        <div class="pickup">Store location</div>
+
+        <div class="location">
+          <ul class="list-group">
+            {%for store in phone['stores']%}
+
+              {% if not store['mark_as_deleted'] %}
+
+                <li class="location-item list-group-item">
+                    <div class="row">
+                      <div class="col-md-9">
+                        <span class="address">
+                         {{ store['name'] }} - {{ store['location'] }}
+                        </span>
+                      </div>
+                      <div class="col-md-3">
+                        <span class="delete-btn"> 
+                          <button class="del-btn btn btn-primary">Delete</button>
+                        </span>
+                        <span class="delete-btn"> 
+                          <button class="undo-btn btn btn-primary">Undo</button>
+                        </span>
+                      </div>
+                    </div>
+                </li>
+
+             {% endif %}
+            {%endfor%}
+          </ul>
+        </div>
+	 </div>
+
+   <div class="phone-id">
+     {{ phone['id'] }}
+   </div>
+
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home Page</title>
+
+    <!-- CSS -->
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='normalize.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> 
+
+	<!-- Bootstrap 5 -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!-- Google Fonts -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">	
+
+  </head>
+
+  <body class="page">
+
+	<!-- global container  -->
+	<div class="container-fluid wrapper">
+
+		<!-- Header -->
+
+		<header class="header">
+			<form action="/search" method="GET" class="input-form row">
+			
+				<div class="home col-md-3">
+					<a href="/" class="home-button">Home</a>
+				</div>
+
+				<div class="home col-md-3">
+					<a href="/create" class="home-button">Create</a>
+				</div>
+
+				<div class="col-auto col-md-4">
+					<input type="text" name="q" class="form-control search-control" id="inlineFormInput" placeholder="Search in the store">
+				</div>
+
+				<div class="col-submit col-md-2">
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</div>		
+
+		  	</form>
+		</header>
+
+		<!-- Mission Statement -->
+
+		<div class="mission">
+			<h2 class="mission-statement h">We strive to solve the unmet needs of our customers - and we rely on our employees to solve those puzzles.</h2>
+			<h3 class="statement h">All your shopping needs will be taken care of. Thank you for choosing us!</h3>
+		</div>
+
+		<!-- Products display -->
+
+		<div class="row row-cols-1 row-cols-md-3 g-4">
+
+			{%for phone in phones%} 
+  
+				<div class="col">
+				  <div class="card">
+				  	<a href="/view/{{ phone['id'] }}" class="card-img-wrapper">
+						<img src="{{ phone['picture'] }}" class="card-img-top" alt="{{ phone['model'] }}">
+					</a>
+					<div class="card-body">
+					  <h5 class="card-title">{{ phone['company'] }} - {{ phone['model'] }}</h5>
+					  <div class="price-block">
+						<p class="card-text"> ${{ phone['price'] }}</p>
+						<a href="/view/{{ phone['id'] }}" class="btn btn-primary">more</a>
+					  </div>
+					</div>
+				  </div>
+				</div>
+    			 
+			{%endfor%} 
+			
+		  </div>
+
+	</div>
+
+
+
+		<!-- JQuery -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+		<!-- JavaScript -->
+		<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  </body>
+</html>

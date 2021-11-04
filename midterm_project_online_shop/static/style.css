@@ -1,0 +1,228 @@
+/* Base styles */
+
+
+.h {
+	margin:0px;
+	padding:0px;
+}
+
+
+/* HOME.html style begin */
+
+.wrapper {
+	max-width:1200px;
+	margin: 0 auto; /*centering the header*/
+	padding:0 10px;
+	padding-bottom: 30px;
+}
+
+.header {
+	margin-bottom: 30px; 
+	margin-top: 30px;
+	
+}
+
+.home{
+	font-size: 20px;
+	font-weight:700;	
+}
+
+.home-button {
+	text-decoration: none;
+	color:black;
+}
+
+.home a:hover {
+	color:royalblue;
+}
+
+.mission {
+	text-align: center;
+}
+
+.mission-statement {
+	margin-bottom: 25px;
+	font-size: 35px;
+}
+
+.statement {
+	margin-bottom: 30px;
+	font-size: 25px;
+}
+
+.col {
+	border: none;
+}
+
+.card-title {
+	color:#212B3B;
+	min-height: 48px;
+}
+
+.card-text {
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.card-img-wrapper {
+	display: block;
+	max-height: 490px;
+	overflow-y: hidden;
+}
+
+/* HOME.html style end */
+
+/* CREATE.html style begin */
+
+.new-item-created {
+	margin-bottom: 15px;
+	font-size: 25px;
+	color:green;
+}
+
+.col-md-4 {
+	margin-bottom: 20px;
+}
+
+.add-item {
+	font-size: 25px;
+	color:#212B3B;
+	font-weight: 600;
+}
+
+.error-detection {
+	font-size: 15px;
+	color: red;
+}
+
+.submit-btn {
+	margin-top: 15px;
+}
+
+.new-item-created {
+	display: none;
+}
+
+.new-item-link {
+	display: none;
+}
+
+
+/* CREATE.html style end */
+
+/* SEARCH.html style start */
+
+.results {
+	margin-bottom: 20px;
+	font-size: 25px;
+	font-weight: 600;
+}
+
+.card-title mark,.card-title .mark {
+	background-color: #9AC0CD;
+	padding: 0;
+}
+
+/* SEARCH.html style end */
+
+/* VIEW.html style start */
+
+.mb-6 {
+	margin-bottom: 25px;
+}
+
+.phone-view {
+	margin-bottom: 50px;
+}
+
+
+.card-title-view {
+	font-size: 40px;
+	margin-bottom: 15px;
+}
+
+.price-edit {
+	display:inline-block;
+	vertical-align: top;
+	margin-bottom: 15px;
+}
+
+.price {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.btn-group {
+	margin-left: 25px;
+}
+
+
+.btn-primary {
+	margin-right: 20px;
+}
+
+.card-text-view-one {
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.card-text-view-two {
+	font-size: 20px;
+	text-align:justify;
+}
+
+.pickup {
+	font-size: 30px;
+	font-weight: 600;
+	margin-bottom: 25px;
+}
+
+.list-group {
+	font-size: 20px;
+}
+
+.location {
+	max-width: 400px;
+}
+
+.btn-edit {
+	display:inline-block;
+	vertical-align: top;
+}
+
+.phone-img {
+	width: auto;
+	max-width: 200px;
+}
+
+.phone-img-wrapper {
+	text-align: center;
+}
+
+.undo-btn {
+	display: none;
+}
+
+.submit {
+	display: none;
+}
+
+.discard {
+	display: none;
+}
+
+.price-input {
+	display: none;
+	max-width: 200px;
+	width: 100%;
+}
+
+.price-error {
+	color: red;
+}
+
+.phone-id {
+	display: none;
+}
+
+/* VIEW.html style end */
